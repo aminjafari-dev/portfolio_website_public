@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Anderson - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            height: calc(100% + 50px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child)::after {
+            background-color: #374151;
+        }
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Home</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
+                    <a href="#articles" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Articles</a>
+                    <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Experience</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
+                    <button id="themeToggle" class="w-10 h-10 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary cursor-pointer">
+                        <i class="ri-sun-line dark:hidden"></i>
+                        <i class="ri-moon-line hidden dark:block"></i>
+                    </button>
+                </div>
+                <button class="md:hidden flex items-center" id="mobileMenuButton">
+                    <i class="ri-menu-line text-2xl text-gray-700 dark:text-gray-300"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Home</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
+                <a href="#articles" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Articles</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent dark:from-blue-900/20 dark:to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        Hi, I'm <span class="text-primary">John Anderson</span>
+                    </h1>
+                    <p class="typing text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+                        Full Stack Developer & Technical Writer
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        Passionate about creating elegant solutions and sharing knowledge through code and writing.
+                    </p>
+                    <div class="flex gap-4 mb-8">
+                        <a href="#projects" class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors cursor-pointer whitespace-nowrap">
+                            View Projects
+                        </a>
+                        <a href="#articles" class="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-button hover:border-primary hover:text-primary transition-colors cursor-pointer whitespace-nowrap">
+                            Read Articles
+                        </a>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors cursor-pointer">
+                            <i class="ri-github-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors cursor-pointer">
+                            <i class="ri-linkedin-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors cursor-pointer">
+                            <i class="ri-medium-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-x-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://public.readdy.ai/ai/img_res/a159518f8350fee8b8460265649820ed.jpg" 
+                         alt="John Anderson" 
+                         class="rounded-2xl shadow-xl w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h2>
+            <div class="flex gap-4 mb-8 overflow-x-auto pb-4">
+                <button class="px-4 py-2 bg-primary text-white rounded-full text-sm whitespace-nowrap cursor-pointer">All Projects</button>
+                <button class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm whitespace-nowrap hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Web Development</button>
+                <button class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm whitespace-nowrap hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Mobile Apps</button>
+                <button class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm whitespace-nowrap hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">UI/UX Design</button>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/a47b631209a52c6f5852bf64e3c71a93.jpg" 
+                         alt="Project 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A real-time analytics dashboard built with React and D3.js, featuring customizable widgets and data visualization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">D3.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">TypeScript</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            View Project
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/dd31f0ae318b0f590accb3cba8635415.jpg" 
+                         alt="Project 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">E-commerce Mobile App</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A full-featured e-commerce mobile app built with React Native, featuring real-time inventory and secure payments.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Redux</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Firebase</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            View Project
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/0e14cfccff6b68c34ffe310e7cdf1816.jpg" 
+                         alt="Project 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">AI Chatbot Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">An intelligent chatbot platform powered by machine learning, providing automated customer support solutions.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">FastAPI</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            View Project
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Latest Articles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/6275afc99ef99d120f4a7c927989f4e0.jpg" 
+                         alt="Article 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-2">
+                            <span>March 4, 2025</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Microservices Architecture: A Practical Guide</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Learn how to design and implement scalable microservices architecture with real-world examples.</p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            Read on Medium
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/ff3862f297e3d8697f4fa7d916334efb.jpg" 
+                         alt="Article 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-2">
+                            <span>March 1, 2025</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Advanced React Performance Optimization</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Deep dive into React performance optimization techniques and best practices.</p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            Read on Medium
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="https://public.readdy.ai/ai/img_res/d96131f45d6671a6e3dd91c694fe4cc7.jpg" 
+                         alt="Article 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-2">
+                            <span>February 28, 2025</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Introduction to Machine Learning with Python</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">A beginner-friendly guide to getting started with machine learning using Python.</p>
+                        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 cursor-pointer">
+                            Read on Medium
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Professional Experience</h2>
+            <div class="space-y-8">
+                <div class="timeline-item relative pl-8">
+                    <div class="absolute left-0 top-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <i class="ri-briefcase-line text-white"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 ml-4 shadow-lg">
+                        <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Senior Full Stack Developer</h3>
+                                <p class="text-primary">TechCorp Solutions</p>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">2023 - Present</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                            <li>Led the development of a microservices-based e-commerce platform</li>
+                            <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-8">
+                    <div class="absolute left-0 top-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                        <i class="ri-briefcase-line text-white"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 ml-4 shadow-lg">
+                        <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Full Stack Developer</h3>
+                                <p class="text-primary">InnovateX</p>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">2021 - 2023</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                            <li>Developed and maintained multiple React-based web applications</li>
+                            <li>Optimized database queries improving application performance by 40%</li>
+                            <li>Integrated third-party APIs and payment gateways</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-8">
+                    <div class="absolute left-0 top-2 w-8 h-8 bg-gray-400 dark:bg-gray-600 rounded-full flex items-center justify-center">
+                        <i class="ri-briefcase-line text-white"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 ml-4 shadow-lg">
+                        <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Frontend Developer</h3>
+                                <p class="text-primary">WebTech Studios</p>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">2019 - 2021</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+                            <li>Built responsive web interfaces using modern JavaScript frameworks</li>
+                            <li>Collaborated with UI/UX designers to implement pixel-perfect designs</li>
+                            <li>Participated in daily stand-ups and sprint planning meetings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        I'm always open to new opportunities and interesting projects. Feel free to reach out!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span>john.anderson@example.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-button bg-transparent text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-button bg-transparent text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-button bg-transparent text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors cursor-pointer whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 dark:bg-gray-800/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary mb-4 block">logo</a>
+                    <p class="text-gray-600 dark:text-gray-400">Building digital experiences with code and creativity.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-600 dark:text-gray-400 hover:text-primary">Home</a></li>
+                        <li><a href="#projects" class="text-gray-600 dark:text-gray-400 hover:text-primary">Projects</a></li>
+                        <li><a href="#articles" class="text-gray-600 dark:text-gray-400 hover:text-primary">Articles</a></li>
+                        <li><a href="#experience" class="text-gray-600 dark:text-gray-400 hover:text-primary">Experience</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase mb-4">Follow Me</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-github-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-linkedin-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 
+
+ flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-medium-line text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-twitter-x-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase mb-4">Newsletter</h3>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-button bg-transparent text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary">
+                        <button type="submit" class="w-full px-4 py-2 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 text-center text-gray-600 dark:text-gray-400">
+                <p>&copy; 2025 John Anderson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Typing Effect
+        const text = "Full Stack Developer & Technical Writer";
+        const typingElement = document.querySelector('.typing');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent = text.slice(0, index + 1);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+
+        type();
+    </script>
+</body>
+</html>
