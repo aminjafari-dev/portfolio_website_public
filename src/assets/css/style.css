@@ -1,0 +1,21 @@
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            height: calc(100% + 50px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child)::after {
+            background-color: #374151;
+        }
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }

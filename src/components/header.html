@@ -1,0 +1,32 @@
+<nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Home</a>
+                <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
+                <a href="#articles" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Articles</a>
+                <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Experience</a>
+                <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
+                <button id="themeToggle" class="w-10 h-10 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary cursor-pointer">
+                    <i class="ri-sun-line dark:hidden"></i>
+                    <i class="ri-moon-line hidden dark:block"></i>
+                </button>
+            </div>
+            <button class="md:hidden flex items-center" id="mobileMenuButton">
+                <i class="ri-menu-line text-2xl text-gray-700 dark:text-gray-300"></i>
+            </button>
+        </div>
+    </div>
+    <div class="md:hidden hidden" id="mobileMenu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Home</a>
+            <a href="#projects" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Projects</a>
+            <a href="#articles" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Articles</a>
+            <a href="#experience" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Experience</a>
+            <a href="#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">Contact</a>
+        </div>
+    </div>
+</nav>
